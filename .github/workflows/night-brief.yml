@@ -1,0 +1,39 @@
+name: Night Brief
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # 11 PM PDT previous day (Mar-Nov)
+    - cron: '0 7 * * *'   # 11 PM PST previous day (Nov-Mar)
+  workflow_dispatch:
+
+jobs:
+  send-night-brief:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - run: pip install -r requirements.txt
+
+      - name: Setup Google credentials
+        run: echo '${{ secrets.GOOGLE_CREDENTIALS_JSON }}' > credentials.json
+
+      - name: Send night brief
+        env:
+          GOOGLE_CREDENTIALS_PATH: ./credentials.json
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+          GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+          TIMEZONE: America/Los_Angeles
+        run: python -m src.email_client night
+
+      - name: Cleanup
+        if: always()
+        run: rm -f credentials.json
