@@ -23,15 +23,6 @@ jobs:
           GOOGLE_CREDS: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
         run: echo "$GOOGLE_CREDS" > credentials.json
 
-      - name: Debug - verify setup
-        env:
-          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
-        run: |
-          echo "Credentials file exists: $(test -f credentials.json && echo 'yes' || echo 'no')"
-          echo "Credentials file size: $(wc -c < credentials.json) bytes"
-          echo "Sheet ID length: ${#GOOGLE_SHEET_ID}"
-          echo "First 20 chars of creds: $(head -c 20 credentials.json)"
-
       - name: Process inbox
         env:
           GOOGLE_CREDENTIALS_PATH: ./credentials.json
