@@ -1,0 +1,23 @@
+# Life OS Dependencies
+
+# AI
+google-genai>=1.56.0
+
+# Google APIs
+google-api-python-client>=2.100.0
+google-auth-httplib2>=0.2.0
+google-auth-oauthlib>=1.2.0
+gspread>=6.0.0
+
+# Data validation
+pydantic>=2.5.0
+
+# Environment
+python-dotenv>=1.0.0
+
+# Timezone handling
+pytz>=2024.1
+
+# Testing
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
