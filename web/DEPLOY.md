@@ -44,3 +44,7 @@ SUPABASE_ACCESS_TOKEN=<token> npx supabase functions deploy edit-item --project-
 ```bash
 SUPABASE_ACCESS_TOKEN=<token> npx supabase secrets set GEMINI_API_KEY=<key> --project-ref hgnvvlytvukuauonibxm
 ```
+
+## CI/CD
+
+GitHub auto-deploy is enabled. Pushes to `main` automatically trigger production deployments.
