@@ -8,7 +8,7 @@ This Cloud Function receives voice/text captures from your phone and adds them t
 
 ## Part 1: Google Cloud Functions Deployment
 
-### Prerequisites
+dd### Prerequisites
 
 1. Google Cloud SDK installed (`brew install google-cloud-sdk`)
 2. A Google Cloud project (you already have: `enduring-badge-484222-s9`)

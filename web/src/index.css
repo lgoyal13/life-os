@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/* Life OS Design System Tokens */
+@theme {
+  /* Colors - Backgrounds */
+  --color-bg-surface: #ffffff;
+  --color-bg-elevated: #fafafa;
+  --color-bg-muted: #f3f4f6;
+
+  /* Colors - Text */
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+
+  /* Colors - Urgency */
+  --color-urgency-high: #ef4444;
+  --color-urgency-medium: #f59e0b;
+  --color-urgency-low: #9ca3af;
+
+  /* Colors - Status */
+  --color-status-complete: #22c55e;
+  --color-status-in-progress: #3b82f6;
+  --color-status-not-started: #9ca3af;
+
+  /* Colors - Interactive */
+  --color-interactive-primary: #2563eb;
+  --color-interactive-hover: #1d4ed8;
+  --color-interactive-focus: #3b82f6;
+
+  /* Colors - Borders */
+  --color-border: #e5e7eb;
+  --color-border-focus: #3b82f6;
+
+  /* Colors - Category Pastels */
+  --color-category-personal: #e0f2fe;    /* soft blue */
+  --color-category-work: #fef3c7;        /* soft amber */
+  --color-category-health: #dcfce7;      /* soft green */
+  --color-category-finance: #f3e8ff;     /* soft purple */
+  --color-category-family: #ffe4e6;      /* soft rose */
+  --color-category-home: #fed7aa;        /* soft orange */
+  --color-category-car: #e5e7eb;         /* soft gray */
+  --color-category-travel: #cffafe;      /* soft cyan */
+  --color-category-ideas: #fef9c3;       /* soft yellow */
+  --color-category-reference: #f1f5f9;   /* soft slate */
+  --color-category-recruiting: #fce7f3;  /* soft pink */
+
+  /* Colors - Type Backgrounds */
+  --color-type-task: #dbeafe;            /* blue tint */
+  --color-type-event: #fce7f3;           /* pink tint */
+  --color-type-idea: #fef9c3;            /* yellow tint */
+  --color-type-reference: #f1f5f9;       /* slate tint */
+
+  /* Colors - Success */
+  --color-success: #22c55e;
+  --color-success-bg: #dcfce7;
+
+  /* Typography Scale */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.375rem;   /* 22px */
+  --font-size-2xl: 1.75rem;   /* 28px */
+
+  /* Spacing (8px grid) */
+  --spacing-1: 0.25rem;   /* 4px */
+  --spacing-2: 0.5rem;    /* 8px */
+  --spacing-3: 0.75rem;   /* 12px */
+  --spacing-4: 1rem;      /* 16px */
+  --spacing-5: 1.25rem;   /* 20px */
+  --spacing-6: 1.5rem;    /* 24px */
+  --spacing-8: 2rem;      /* 32px */
+  --spacing-10: 2.5rem;   /* 40px */
+  --spacing-12: 3rem;     /* 48px */
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+}
+
+/* Base Styles */
+html {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
