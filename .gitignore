@@ -4,7 +4,10 @@
 !.env.example
 *.json
 !package.json
+!package-lock.json
 !tsconfig.json
+!tsconfig.*.json
+!vercel.json
 
 # Python
 __pycache__/
@@ -54,3 +57,5 @@ htmlcov/
 
 # Claude Code
 .claude/
+.vercel
+.env*.local
