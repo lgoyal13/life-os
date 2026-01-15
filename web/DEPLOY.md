@@ -47,4 +47,4 @@ SUPABASE_ACCESS_TOKEN=<token> npx supabase secrets set GEMINI_API_KEY=<key> --pr
 
 ## CI/CD
 
-GitHub auto-deploy is enabled. Pushes to `main` automatically trigger production deployments.
+GitHub auto-deploy is connected. Pushes to `main` automatically trigger production deployments.
