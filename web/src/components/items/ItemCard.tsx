@@ -12,7 +12,7 @@ import {
   Send,
   Loader2,
 } from 'lucide-react'
-import type { Item, ItemType, Urgency, ItemStatus, Category } from '../../lib/types'
+import type { Item, ItemType, Urgency, ItemStatus } from '../../lib/types'
 import { cn, formatDate } from '../../lib/utils'
 import { CATEGORIES, IDEA_SUBCATEGORIES, URGENCY_LEVELS, ITEM_STATUSES } from '../../lib/types'
 import { useMutateItem, useItemChat } from '../../hooks'
